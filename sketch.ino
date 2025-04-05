@@ -4,7 +4,7 @@ int Green = 7;
 int Greenp = 11;
 int Yellow = 8;
 int Button = 9;
-int ButtonState, LastButton = 0;
+int ButtonState, LastButton = 0, state;
 
 
 
@@ -37,20 +37,23 @@ LastButton = ButtonState;
 
 
 void Pedes(int Can, int Last) {
-if(Last == HIGH||Can == 1){
+if(Last == 0||Can == 1){
 digitalWrite(Green, (Can == 1) ? LOW:HIGH);
 digitalWrite(Yellow, (Can == 1) ? HIGH:LOW);
 }
 else if(Last == HIGH && Can == 0){
-  for(int x = 0;x < 7; x++){
+  for(int x = 0;x < 13; x++){
     digitalWrite(Greenp, HIGH);
-    delay(200);
+    delay(250);
     digitalWrite(Greenp, LOW);
-    digitalWrite(Yellow, HIGH);
-    delay(1000);
-    digitalWrite(Yellow, LOW);
-    digitalWrite(Red, HIGH);
+    delay(250);
   }
+  digitalWrite(Red, LOW);
+  digitalWrite(Green, LOW);
+  digitalWrite(Redp, HIGH);
+  digitalWrite(Yellow, HIGH);
+  delay(1000);
+  digitalWrite(Yellow, LOW);
 
 }
 if(Can == 1){
