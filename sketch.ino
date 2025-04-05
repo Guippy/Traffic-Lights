@@ -37,7 +37,7 @@ LastButton = ButtonState;
 
 
 void Pedes(int Can, int Last) {
-if(Last == ||Can == 1){
+if(Last == HIGH||Can == 1){
 digitalWrite(Green, (Can == 1) ? LOW:HIGH);
 digitalWrite(Yellow, (Can == 1) ? HIGH:LOW);
 }
