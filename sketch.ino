@@ -4,7 +4,7 @@ int Green = 7;
 int Greenp = 11;
 int Yellow = 8;
 int Button = 9;
-int ButtonState, LastButton = 0, state;
+int ButtonState, LastButton = 0;
 
 
 
